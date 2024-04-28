@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Games() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-4 lg:p-24">
       <Constraints>
         <p className="overline-title text-center">Take a look at</p>
         <h1 className="hero-title">our games</h1>
@@ -13,11 +13,11 @@ export default function Games() {
       {games.map((game, index) => (
         <section className="py-24">
           <Constraints>
-            <div className="grid grid-cols-2 gap-[130px] ">
+            <div className="grid grid-cols-2 gap-8 lg:gap-[130px] ">
               <div
                 className={cn(
                   index % 2 ? "order-last" : "",
-                  "relative h-full w-full aspect-video"
+                  "relative h-full w-full aspect-video col-span-2 md:col-span-1"
                 )}
               >
                 <Image
@@ -26,11 +26,11 @@ export default function Games() {
                   alt="image"
                   className={cn(
                     index % 2 ? "rotate-2" : "-rotate-2",
-                    "aspect-video object-cover bg-center object-center shadow-lg"
+                    "aspect-video object-cover bg-center object-center shadow-lg "
                   )}
                 />
               </div>
-              <div className="space-y-6 flex flex-col items-start justify-center">
+              <div className="space-y-8 flex flex-col items-start justify-center  col-span-2 md:col-span-1">
                 <div className="space-y-4">
                   <h3>{game.title}</h3>
                   <p>{game.body}</p>
