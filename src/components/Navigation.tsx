@@ -2,14 +2,18 @@ import React from "react";
 import Image from "next/image";
 import { Constraints } from "./Constraints";
 import Link from "next/link";
+import { MdOutlineMenu } from "react-icons/md";
 
 export const Navigation = () => {
   return (
-    <nav className=" top-0 sticky py-6 px-4 z-10 backdrop-blur-sm ">
+    <nav className=" top-0 sticky p-4 z-10 backdrop-blur-sm ">
       <Constraints>
         <div className="flex flex-row items-center justify-between ">
-          <Image src={"/logo.png"} alt="logo" width={66} height={48} />
-          <div className="space-x-8 flex items-center">
+          <Link href={"/"} passHref>
+            <Image src={"/logo.png"} alt="logo" width={66} height={48} />
+          </Link>
+          <MdOutlineMenu className="md:hidden" size={42} />
+          <div className="space-x-8 hidden md:flex items-center ">
             {[0, 1, 2].map(() => (
               <Link href={"/games"} passHref className="text-xl lowercase">
                 games

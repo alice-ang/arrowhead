@@ -1,4 +1,4 @@
-import { Constraints } from "@/components";
+import { Constraints, ScrollingText } from "@/components";
 import { cn } from "@/lib/utils";
 import { games } from "@/utils/mock";
 import Image from "next/image";
@@ -36,14 +36,13 @@ export default function Games() {
                   <p>{game.body}</p>
                 </div>
 
-                <button className="text-2xl text-palette-yellow border border-palette-yellow px-6 py-2">
-                  View on steam
-                </button>
+                <button className="text-2xl text-palette-yellow border border-palette-yellow px-6 py-2"></button>
               </div>
             </div>
           </Constraints>
         </section>
       ))}
+      <ScrollingText>A game for everyone is a game for no one</ScrollingText>
     </main>
   );
 }

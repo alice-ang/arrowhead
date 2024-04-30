@@ -28,6 +28,9 @@
   h3 {
     @apply text-5xl;
   }
+  h4 {
+    @apply text-3xl;
+  }
   p {
     @apply text-palette-lightGrey;
     @apply text-base;
@@ -54,6 +57,10 @@
     @apply text-palette-yellow;
     @apply uppercase;
     @apply text-base;
+  }
+  .text-stroke {
+    -webkit-text-stroke: 1px #fced31;
+    text-stroke: 1px #fced31;
   }
 }
 h1,
