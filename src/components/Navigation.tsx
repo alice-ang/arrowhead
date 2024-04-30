@@ -3,10 +3,12 @@ import Image from "next/image";
 import { Constraints } from "./Constraints";
 import Link from "next/link";
 import { MdOutlineMenu } from "react-icons/md";
+import { Button } from "./ui/Button";
+import { navLinks } from "@/lib/mock";
 
 export const Navigation = () => {
   return (
-    <nav className=" top-0 sticky p-4 z-10 backdrop-blur-sm ">
+    <nav className=" top-0 fixed w-full  p-4 z-10 backdrop-blur-sm ">
       <Constraints>
         <div className="flex flex-row items-center justify-between ">
           <Link href={"/"} passHref>
@@ -14,15 +16,19 @@ export const Navigation = () => {
           </Link>
           <MdOutlineMenu className="md:hidden" size={42} />
           <div className="space-x-8 hidden md:flex items-center ">
-            {[0, 1, 2].map(() => (
-              <Link href={"/games"} passHref className="text-xl lowercase">
-                games
+            {navLinks.map((link) => (
+              <Link
+                href={`/${link}`}
+                passHref
+                className="text-xl lowercase active:text-palette-yellow"
+              >
+                {link}
               </Link>
             ))}
 
-            <button className="text-2xl bg-palette-yellow px-6 py-2 text-palette-background rotate-6 hover:rotate-0 transition duration-300 ease-in-out">
+            <Button className="rotate-6 hover:rotate-0 transition duration-300 ease-in-out">
               Join us
-            </button>
+            </Button>
           </div>
         </div>
       </Constraints>

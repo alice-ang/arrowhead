@@ -25,3 +25,5 @@ export const games = [
       "https://www.arrowheadgamestudios.com/wp-content/uploads/2024/02/GEXjumlXUAAtrlM-1536x864.jpg",
   },
 ];
+
+export const navLinks = ["about", "games", "news"];

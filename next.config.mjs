@@ -7,6 +7,16 @@ const nextConfig = {
         hostname: "www.arrowheadgamestudios.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "image.api.playstation.com",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.sortiraparis.com",
+        port: "",
+      },
     ],
   },
 };

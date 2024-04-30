@@ -1,6 +1,6 @@
-import { Constraints } from "@/components";
+import { Button, Constraints } from "@/components";
 import { cn } from "@/lib/utils";
-import { games } from "@/utils/mock";
+import { games } from "@/lib/mock";
 import Image from "next/image";
 
 export default function Home() {
@@ -60,10 +60,7 @@ export default function Home() {
                   world.
                 </p>
               </div>
-
-              <button className="text-2xl text-palette-background bg-palette-yellow px-6 py-2">
-                View on steam
-              </button>
+              <Button>Learn more</Button>
             </div>
             <div
               className={cn(
@@ -82,6 +79,23 @@ export default function Home() {
           </div>
         </Constraints>
       </section>
+      <div className="w-full bg-background py-12">
+        <Constraints>
+          <div className="grid grid-cols-12 gap-4">
+            <div className="col-span-7"></div>
+            <div className="col-span-5 space-y-8">
+              <div className="space-y-4">
+                <h3>Want to join us?</h3>
+                <p>
+                  Come and explore your future career options at Arrowhead. Read
+                  more about our culture and the way we work.
+                </p>
+              </div>
+              <Button variant="outline">Join us</Button>
+            </div>
+          </div>
+        </Constraints>
+      </div>
     </main>
   );
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { Constraints } from "./Constraints";
 import Image from "next/image";
 import { Socials } from "./Socials";
+import { Button } from "./ui";
 
 export const Footer = () => {
   return (
@@ -36,9 +37,8 @@ export const Footer = () => {
                   the studio and our game. Don’t hesitate, enlist today!
                 </p>
               </div>
-              <button className="text-2xl bg-palette-yellow px-6 py-2 text-palette-background ">
-                Go to Discord
-              </button>
+              <Button>Go to discord</Button>
+
               <Socials />
             </div>
           </div>
@@ -50,7 +50,7 @@ export const Footer = () => {
       <footer className="">
         <div className="bg-palette-backgroundDark p-4">
           <Constraints>
-            <div className="space-y-8">
+            <div className="space-y-16">
               <Image
                 src={"/logo-full.png"}
                 alt="logo-full"
@@ -103,6 +103,14 @@ export const Footer = () => {
                     ))}
                   </div>
                 </div>
+              </div>
+              <div className="flex flex-row justify-between items-center">
+                <p className="text-palette-lightGrey text-sm">
+                  © 2024 Arrowhead Game Studios | All Rights Reserved.
+                </p>
+                <p className="text-palette-lightGrey text-sm">
+                  Site developed by Alice A
+                </p>
               </div>
             </div>
           </Constraints>

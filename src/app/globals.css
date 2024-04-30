@@ -36,6 +36,9 @@
     @apply text-base;
     @apply leading-7;
   }
+  footer p {
+    @apply text-white;
+  }
 }
 @layer utilities {
   .text-balance {
@@ -68,7 +71,8 @@ h2,
 h3,
 h4,
 h5,
-button {
+button,
+button a {
   font-family: var(--font-staatliches);
   letter-spacing: 0.025em;
   text-transform: "uppercase";
