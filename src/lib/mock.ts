@@ -27,3 +27,18 @@ export const games = [
 ];
 
 export const navLinks = ["about", "games", "news"];
+
+export const gameMeta = [
+  {
+    title: "Genre",
+    content: ["Action Adventure ", "Platformer"],
+  },
+  {
+    title: "Platforms",
+    content: ["PC, Xbox One, PS5, Xbox Series S/X"],
+  },
+  {
+    title: "Release",
+    content: ["March 21, 2024"],
+  },
+];

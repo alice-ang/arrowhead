@@ -1,29 +1,22 @@
-import { Constraints } from "@/components";
+import { Button, Constraints, HeroBackground } from "@/components";
+import { gameMeta } from "@/lib/mock";
 import Image from "next/image";
 
 export default function Game() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <div className="h-screen w-full relative">
-        <Image
-          src="https://www.arrowheadgamestudios.com/wp-content/uploads/2024/02/GEXjumlXUAAtrlM-1536x864.jpg"
-          alt="hero"
-          fill
-          className="bg-cover object-cover bg-center opacity-25"
-        />
-        <Constraints>
-          <div className="flex flex-col justify-center items-center h-full relative">
-            <div>
-              <h1 className="hero-title text-center">Helldivers 2</h1>
-              <p className=" text-center max-w-xl mx-auto">
-                The Galaxy’s Last Line of Offence. Enlist in the Helldivers and
-                join the fight for freedom across a hostile galaxy in a fast,
-                frantic, and ferocious third-person shooter.
-              </p>
-            </div>
+      <HeroBackground>
+        <div className="flex flex-col justify-center items-center h-full relative">
+          <div>
+            <h1 className="hero-title text-center">Helldivers 2</h1>
+            <p className=" text-center max-w-xl mx-auto">
+              The Galaxy’s Last Line of Offence. Enlist in the Helldivers and
+              join the fight for freedom across a hostile galaxy in a fast,
+              frantic, and ferocious third-person shooter.
+            </p>
           </div>
-        </Constraints>
-      </div>
+        </div>
+      </HeroBackground>
       <div className="bg-palette-backgroundLight w-full aspect-video h-full max-w-7xl relative">
         <Image
           src={"/diver.png"}
@@ -40,7 +33,21 @@ export default function Game() {
           className="-right-32 -bottom-10 absolute"
         />
       </div>
-
+      <Constraints>
+        <div className="grid grid-cols-12 py-16 ">
+          {gameMeta.map((meta) => (
+            <div className="col-span-3">
+              <p className="overline-title">{meta.title}</p>
+              {meta.content.map((item) => (
+                <p className="text-white">{item}</p>
+              ))}
+            </div>
+          ))}
+          <div className="col-span-3">
+            <Button size="full">View on Steam</Button>
+          </div>
+        </div>
+      </Constraints>
       <section className="py-24">
         <Constraints>
           <div className="grid grid-cols-8 gap-8 lg:gap-[130px] ">
