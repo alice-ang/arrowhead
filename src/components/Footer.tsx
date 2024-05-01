@@ -1,13 +1,15 @@
 import React from "react";
 import { Constraints } from "./Constraints";
 import Image from "next/image";
+import { Socials } from "./Socials";
+import { Button } from "./ui";
 
 export const Footer = () => {
   return (
-    <div>
+    <div className="relative">
       <Constraints>
-        <div className="grid grid-cols-12 items-center py-24">
-          <div className="col-span-6 relative">
+        <div className="grid grid-cols-12 items-center">
+          <div className="col-span-12 md:col-span-6 relative">
             <button className="text-2xl text-palette-yellow border border-palette-yellow px-6 py-2 -rotate-12 mb-4">
               Community
             </button>
@@ -16,11 +18,18 @@ export const Footer = () => {
               the <br />
               fight
             </h1>
+            {/* <Image
+              src={"/salute.png"}
+              width={390}
+              height={440}
+              alt="Salute helldiver"
+              className="object-contain bg-center object-center -bottom-32 absolute -left-32 rotate-6"
+            /> */}
           </div>
-          <div className=" col-span-12 md:col-span-6">
-            <div className="col-span-12 md:space-y-8">
+          <div className="col-span-12 md:col-span-6">
+            <div className="space-y-8 items-start justify-start flex flex-col ">
               <div className="space-y-4">
-                <h3>Official forums</h3>
+                <h4>Official forums</h4>
                 <p>
                   Want to explore more HELLDIVERS 2? Looking to forge
                   friendships? Want your voice to be heard? <br />
@@ -28,27 +37,20 @@ export const Footer = () => {
                   the studio and our game. Don’t hesitate, enlist today!
                 </p>
               </div>
-              <button className="text-2xl bg-palette-yellow px-6 py-2 text-palette-background ">
-                Go to Discord
-              </button>
+              <Button>Go to discord</Button>
+
+              <Socials />
             </div>
           </div>
         </div>
       </Constraints>
 
-      {/* <Image
-        src={"/salute.png"}
-        width={390}
-        height={440}
-        alt="Salute helldiver"
-        className={"object-cover bg-center object-center shadow-lg  bottom-0 "}
-      /> */}
       <div className=" w-full bg-[url('/footer.png')] h-16 -top-0  bg-no-repeat object-cover bg-center bg-cover " />
 
-      <footer className="relative">
+      <footer className="">
         <div className="bg-palette-backgroundDark p-4">
           <Constraints>
-            <div className="space-y-8">
+            <div className="space-y-16">
               <Image
                 src={"/logo-full.png"}
                 alt="logo-full"
@@ -102,10 +104,25 @@ export const Footer = () => {
                   </div>
                 </div>
               </div>
+              <div className="flex flex-row justify-between items-center">
+                <p className="text-palette-darkGrey text-sm">
+                  © 2024 Arrowhead Game Studios | All Rights Reserved.
+                </p>
+                <p className="text-palette-darkGrey text-sm">
+                  Site developed by Alice A
+                </p>
+              </div>
             </div>
           </Constraints>
         </div>
       </footer>
+      {/* <Image
+        src={"/scout.png"}
+        width={940}
+        height={940}
+        alt="Scout strider"
+        className="object-contain bg-center object-center bottom-24 absolute right-24 opacity-10"
+      /> */}
     </div>
   );
 };

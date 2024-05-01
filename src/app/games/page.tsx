@@ -1,7 +1,8 @@
-import { Constraints } from "@/components";
+import { Button, Constraints, ScrollingText } from "@/components";
 import { cn } from "@/lib/utils";
-import { games } from "@/utils/mock";
+import { games } from "@/lib/mock";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Games() {
   return (
@@ -35,15 +36,15 @@ export default function Games() {
                   <h3>{game.title}</h3>
                   <p>{game.body}</p>
                 </div>
-
-                <button className="text-2xl text-palette-yellow border border-palette-yellow px-6 py-2">
-                  View on steam
-                </button>
+                <Button variant="outline">
+                  <Link href={"/games/1"}>View on steam</Link>
+                </Button>
               </div>
             </div>
           </Constraints>
         </section>
       ))}
+      <ScrollingText>A game for everyone is a game for no one</ScrollingText>
     </main>
   );
 }

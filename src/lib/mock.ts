@@ -25,3 +25,20 @@ export const games = [
       "https://www.arrowheadgamestudios.com/wp-content/uploads/2024/02/GEXjumlXUAAtrlM-1536x864.jpg",
   },
 ];
+
+export const navLinks = ["about", "games", "news"];
+
+export const gameMeta = [
+  {
+    title: "Genre",
+    content: ["Action Adventure ", "Platformer"],
+  },
+  {
+    title: "Platforms",
+    content: ["PC, Xbox One, PS5, Xbox Series S/X"],
+  },
+  {
+    title: "Release",
+    content: ["March 21, 2024"],
+  },
+];

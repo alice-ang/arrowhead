@@ -19,19 +19,27 @@
 @layer base {
   body {
     @apply bg-palette-background;
+    @apply overscroll-none;
   }
   html {
     @apply bg-palette-background;
     @apply text-white;
+    @apply overscroll-none;
   }
 
   h3 {
     @apply text-5xl;
   }
+  h4 {
+    @apply text-3xl;
+  }
   p {
     @apply text-palette-lightGrey;
     @apply text-base;
     @apply leading-7;
+  }
+  footer p {
+    @apply text-white;
   }
 }
 @layer utilities {
@@ -47,7 +55,7 @@
     font-size: 6rem;
     line-height: 7rem;
     letter-spacing: 0.025em;
-    text-align: "center";
+    text-align: center;
   }
 
   .overline-title {
@@ -55,13 +63,18 @@
     @apply uppercase;
     @apply text-base;
   }
+  .text-stroke {
+    -webkit-text-stroke: 1px #fced31;
+    text-stroke: 1px #fced31;
+  }
 }
 h1,
 h2,
 h3,
 h4,
 h5,
-button {
+button,
+button a {
   font-family: var(--font-staatliches);
   letter-spacing: 0.025em;
   text-transform: "uppercase";
