@@ -34,14 +34,14 @@ export default function Home() {
           <p className="overline-title">Take a look at</p>
           <h3>Our games</h3>
         </div>
-        <div className="flex flex-row items-center space-x-14 overflow-scroll">
+        <div className="flex flex-row items-center space-x-14 ">
           {games.map((game, index) => (
             <div className="space-y-4">
               <h4 className="text-palette-yellow">{game.title}</h4>
               <Image
                 src={game.image}
-                width={590}
-                height={260}
+                width={690}
+                height={360}
                 alt="image"
                 className={cn(
                   // index % 2 ? "hover:rotate-2" : "hover:-rotate-2",

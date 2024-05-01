@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const VideoContainer = () => {
   return (
-    <div className="bg-palette-backgroundLight w-full aspect-video h-full max-w-screen-xl relative">
+    <div className="bg-palette-backgroundLight w-full aspect-video h-full max-w-screen-2xl relative">
       <Image
         src={"/diver.png"}
         alt="logo"

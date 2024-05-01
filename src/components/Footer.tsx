@@ -7,10 +7,10 @@ import { footerLinks } from "@/lib/mock";
 
 export const Footer = () => {
   return (
-    <div className="relative">
+    <div className="relative ">
       <Constraints>
-        <div className="grid grid-cols-12 items-center">
-          <div className="col-span-12 md:col-span-6 relative">
+        <div className="grid grid-cols-12 items-center relative py-56">
+          <div className="col-span-12 md:col-span-6 ">
             <button className="text-2xl text-palette-yellow border border-palette-yellow px-6 py-2 -rotate-12 mb-4">
               Community
             </button>
@@ -19,13 +19,6 @@ export const Footer = () => {
               the <br />
               fight
             </h1>
-            {/* <Image
-              src={"/salute.png"}
-              width={390}
-              height={440}
-              alt="Salute helldiver"
-              className="object-contain bg-center object-center -bottom-32 absolute -left-32 rotate-6"
-            /> */}
           </div>
           <div className="col-span-12 md:col-span-6">
             <div className="space-y-8 items-start justify-start flex flex-col ">
@@ -43,13 +36,20 @@ export const Footer = () => {
               <Socials />
             </div>
           </div>
+          <Image
+            src={"/salute.png"}
+            width={390}
+            height={440}
+            alt="Salute helldiver"
+            className="object-contain bg-center object-center -bottom-24 absolute -left-44 rotate-6 hidden md:block"
+          />
         </div>
       </Constraints>
 
-      <div className=" w-full bg-[url('/footer.png')] h-16 -top-0  bg-no-repeat object-cover bg-center bg-cover " />
+      <footer className="relative">
+        <div className=" w-full bg-[url('/footer.png')] h-16 -top-16  bg-no-repeat object-cover bg-center bg-cover absolute z-100" />
 
-      <footer className="">
-        <div className="bg-palette-backgroundDark p-4">
+        <div className="bg-palette-backgroundDark p-4 ">
           <Constraints>
             <div className="space-y-16">
               <Image
