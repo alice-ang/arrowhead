@@ -105,10 +105,10 @@ export const Footer = () => {
                 </div>
               </div>
               <div className="flex flex-row justify-between items-center">
-                <p className="text-palette-lightGrey text-sm">
+                <p className="text-palette-darkGrey text-sm">
                   © 2024 Arrowhead Game Studios | All Rights Reserved.
                 </p>
-                <p className="text-palette-lightGrey text-sm">
+                <p className="text-palette-darkGrey text-sm">
                   Site developed by Alice A
                 </p>
               </div>

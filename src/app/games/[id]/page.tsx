@@ -1,4 +1,9 @@
-import { Button, Constraints, HeroBackground } from "@/components";
+import {
+  Button,
+  Constraints,
+  HeroBackground,
+  VideoContainer,
+} from "@/components";
 import { gameMeta } from "@/lib/mock";
 import Image from "next/image";
 
@@ -17,22 +22,7 @@ export default function Game() {
           </div>
         </div>
       </HeroBackground>
-      <div className="bg-palette-backgroundLight w-full aspect-video h-full max-w-7xl relative">
-        <Image
-          src={"/diver.png"}
-          alt="logo"
-          width={220}
-          height={360}
-          className="-left-32 -bottom-10 absolute"
-        />
-        <Image
-          src={"/bug.png"}
-          alt="logo"
-          width={270}
-          height={170}
-          className="-right-32 -bottom-10 absolute"
-        />
-      </div>
+      <VideoContainer />
       <Constraints>
         <div className="grid grid-cols-12 py-16 ">
           {gameMeta.map((meta) => (
@@ -48,7 +38,7 @@ export default function Game() {
           </div>
         </div>
       </Constraints>
-      <section className="py-24">
+      <section className="py-16">
         <Constraints>
           <div className="grid grid-cols-8 gap-8 lg:gap-[130px] ">
             <div className="relative aspect-[9/16] col-span-8 md:col-span-3">

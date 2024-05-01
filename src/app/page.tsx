@@ -1,4 +1,4 @@
-import { Button, Constraints } from "@/components";
+import { Button, Constraints, VideoContainer } from "@/components";
 import { cn } from "@/lib/utils";
 import { games } from "@/lib/mock";
 import Image from "next/image";
@@ -18,33 +18,31 @@ export default function Home() {
       <h2 className="text-6xl pb-6">
         helldivers 2 is out <span className="text-palette-yellow">now</span>
       </h2>
-      <div className="bg-palette-backgroundLight w-full aspect-video h-full max-w-7xl" />
-
-      <Constraints>
-        <div className="space-y-10">
-          <div>
-            <p className="overline-title">Take a look at</p>
-            <h3>Our games</h3>
-          </div>
-          <div className="flex flex-row items-center space-x-14 overflow-scroll">
-            {games.map((game, index) => (
-              <div className="space-y-4">
-                <h4 className="text-palette-yellow">{game.title}</h4>
-                <Image
-                  src={game.image}
-                  width={590}
-                  height={260}
-                  alt="image"
-                  className={cn(
-                    // index % 2 ? "hover:rotate-2" : "hover:-rotate-2",
-                    "aspect-video object-cover bg-center object-center shadow-lg transition duration-300 ease-in-out"
-                  )}
-                />
-              </div>
-            ))}
-          </div>
+      <VideoContainer />
+      <section className="space-y-10 py-24">
+        <div>
+          <p className="overline-title">Take a look at</p>
+          <h3>Our games</h3>
         </div>
-      </Constraints>
+        <div className="flex flex-row items-center space-x-14 overflow-scroll">
+          {games.map((game, index) => (
+            <div className="space-y-4">
+              <h4 className="text-palette-yellow">{game.title}</h4>
+              <Image
+                src={game.image}
+                width={590}
+                height={260}
+                alt="image"
+                className={cn(
+                  // index % 2 ? "hover:rotate-2" : "hover:-rotate-2",
+                  "aspect-video object-cover bg-center object-center shadow-lg transition duration-300 ease-in-out"
+                )}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="py-24">
         <Constraints>
           <div className="grid grid-cols-2 gap-8 lg:gap-[130px] ">
@@ -79,7 +77,7 @@ export default function Home() {
           </div>
         </Constraints>
       </section>
-      <div className="w-full bg-background py-12">
+      <div className="w-full bg-palette-backgroundLight py-12">
         <Constraints>
           <div className="grid grid-cols-12 gap-4">
             <div className="col-span-7"></div>

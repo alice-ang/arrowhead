@@ -19,10 +19,12 @@
 @layer base {
   body {
     @apply bg-palette-background;
+    @apply overscroll-none;
   }
   html {
     @apply bg-palette-background;
     @apply text-white;
+    @apply overscroll-none;
   }
 
   h3 {
@@ -53,7 +55,7 @@
     font-size: 6rem;
     line-height: 7rem;
     letter-spacing: 0.025em;
-    text-align: "center";
+    text-align: center;
   }
 
   .overline-title {
