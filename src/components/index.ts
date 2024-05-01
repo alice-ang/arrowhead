@@ -6,3 +6,4 @@ export * from "./ScrollingText";
 export * from "./ui";
 export * from "./HeroBackground";
 export * from "./VideoContainer";
+export * from "./JoinUs";

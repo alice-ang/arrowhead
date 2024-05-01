@@ -20,11 +20,13 @@
   body {
     @apply bg-palette-background;
     @apply overscroll-none;
+    @apply overflow-x-hidden;
   }
   html {
     @apply bg-palette-background;
     @apply text-white;
     @apply overscroll-none;
+    @apply overflow-x-hidden;
   }
 
   h3 {

@@ -3,6 +3,7 @@ import { Constraints } from "./Constraints";
 import Image from "next/image";
 import { Socials } from "./Socials";
 import { Button } from "./ui";
+import { footerLinks } from "@/lib/mock";
 
 export const Footer = () => {
   return (
@@ -98,8 +99,8 @@ export const Footer = () => {
                     </div>
                   </form>
                   <div className="flex space-x-8 items-center">
-                    {[0, 1, 2, 3, 4].map(() => (
-                      <p className="underline">Support</p>
+                    {footerLinks.map((link) => (
+                      <p className="underline">{link}</p>
                     ))}
                   </div>
                 </div>
