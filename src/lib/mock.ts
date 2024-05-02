@@ -1,3 +1,9 @@
+export type Game = {
+  title: string;
+  body: string;
+  image: string;
+};
+
 export const games = [
   {
     title: "Helldivers",

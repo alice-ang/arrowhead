@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useRef } from "react";
 import {
   motion,
   useMotionValue,
@@ -9,21 +9,51 @@ import {
   useVelocity,
 } from "framer-motion";
 
-export const ScrollingText = ({ children }: { children: ReactNode }) => {
-  const baseX = useMotionValue(0);
-  const { scrollY } = useScroll();
-  const scrollVelocity = useVelocity(scrollY);
-  const smoothVelocity = useSpring(scrollVelocity, {
-    damping: 50,
-    stiffness: 400,
+export const ScrollingText = ({
+  children,
+  invert = false,
+}: {
+  children: ReactNode;
+  invert?: boolean;
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
   });
-  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
-    clamp: false,
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 200,
+    damping: 40,
   });
 
+  const x = useTransform(
+    scaleX,
+    [0, 1],
+    [invert ? "-10%" : "1%", invert ? "1%" : "-10%"]
+  );
+
   return (
-    <motion.h2 className="text-stroke text-[96px] text-palette-background w-screen">
-      {children}
-    </motion.h2>
+    <div className="" ref={ref}>
+      <motion.div className="no-wrap flex relative" style={{ x }}>
+        <h2 className="text-stroke text-[96px] text-palette-background leading-[90%] right-[100%] absolute w-full ">
+          {children}
+        </h2>
+        <h2 className="text-stroke text-[96px] text-palette-background w-full leading-[90%]">
+          {children}
+        </h2>
+        <h2 className="text-stroke text-[96px] text-palette-background leading-[90%] left-[100%] absolute w-full">
+          {children}
+        </h2>
+        <h2 className="text-stroke text-[96px] text-palette-background leading-[90%] left-[100%] absolute w-full">
+          {children}
+        </h2>
+        <h2 className="text-stroke text-[96px] text-palette-background leading-[90%] left-[200%] absolute w-full">
+          {children}
+        </h2>
+        <h2 className="text-stroke text-[96px] text-palette-background leading-[90%] left-[300%] absolute w-full">
+          {children}
+        </h2>
+      </motion.div>
+    </div>
   );
 };
