@@ -1,15 +1,28 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import { Constraints } from "./Constraints";
 import Image from "next/image";
 import { Socials } from "./Socials";
 import { Button } from "./ui";
 import { footerLinks } from "@/lib/mock";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export const Footer = () => {
+  const ref = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+  });
+
+  const saluteY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+
   return (
     <div className="relative ">
       <Constraints>
-        <div className="grid grid-cols-12 items-center relative py-56">
+        <div
+          className="grid grid-cols-12 items-center relative py-56"
+          ref={ref}
+        >
           <div className="col-span-12 md:col-span-6 ">
             <button className="text-2xl text-palette-yellow border border-palette-yellow px-6 py-2 -rotate-12 mb-4">
               Community
@@ -36,12 +49,18 @@ export const Footer = () => {
               <Socials />
             </div>
           </div>
-          <Image
+          <motion.img
+            style={{
+              y: saluteY,
+              backgroundPosition: "bottom",
+              backgroundSize: "cover",
+              scale: 1.3,
+            }}
             src={"/salute.png"}
-            width={390}
-            height={440}
+            width={340}
+            height={390}
             alt="Salute helldiver"
-            className="object-contain bg-center object-center -bottom-24 absolute -left-44 rotate-6 hidden md:block"
+            className="object-contain bg-center object-center -bottom-16 absolute -left-32 rotate-6 hidden md:block"
           />
         </div>
       </Constraints>

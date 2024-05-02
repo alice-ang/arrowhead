@@ -11,7 +11,7 @@ export default function NotFoundPage() {
           </h4>
           <h1 className="hero-title">Traitor detected</h1>
           <Link passHref href="/">
-            <p className=" text-xl text-center hover:text-palette-yellow">
+            <p className=" text-xl text-center hover:text-palette-yellow hover:underline">
               Return to combat zone
             </p>
           </Link>

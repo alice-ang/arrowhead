@@ -23,7 +23,9 @@ export default function Game() {
           </div>
         </div>
       </HeroBackground>
+
       <VideoContainer />
+
       <Constraints>
         <div className="grid grid-cols-12 py-16 ">
           {gameMeta.map((meta) => (
