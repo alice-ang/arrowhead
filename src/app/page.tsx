@@ -1,20 +1,30 @@
-import { Button, Constraints, VideoContainer } from "@/components";
+import {
+  Button,
+  Constraints,
+  HeroBackground,
+  JoinUs,
+  VideoContainer,
+} from "@/components";
 import { cn } from "@/lib/utils";
 import { games } from "@/lib/mock";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <Constraints>
-        <h1 className="hero-title">
-          <q>
-            A game for everyone <br />
-            is a game for no one
-          </q>
-        </h1>
-      </Constraints>
-
+      <HeroBackground src="https://www.arrowheadgamestudios.com/wp-content/uploads/2024/02/GEXjumlXUAAtrlM-1536x864.jpg">
+        <div className="flex flex-col justify-center items-center h-full relative">
+          <div>
+            <h1 className="hero-title">
+              <q>
+                A game for everyone <br />
+                is a game for no one
+              </q>
+            </h1>
+          </div>
+        </div>
+      </HeroBackground>
       <h2 className="text-6xl pb-6">
         helldivers 2 is out <span className="text-palette-yellow">now</span>
       </h2>
@@ -24,14 +34,14 @@ export default function Home() {
           <p className="overline-title">Take a look at</p>
           <h3>Our games</h3>
         </div>
-        <div className="flex flex-row items-center space-x-14 overflow-scroll">
+        <div className="flex flex-row items-center space-x-14 ">
           {games.map((game, index) => (
             <div className="space-y-4">
               <h4 className="text-palette-yellow">{game.title}</h4>
               <Image
                 src={game.image}
-                width={590}
-                height={260}
+                width={690}
+                height={360}
                 alt="image"
                 className={cn(
                   // index % 2 ? "hover:rotate-2" : "hover:-rotate-2",
@@ -46,7 +56,7 @@ export default function Home() {
       <section className="py-24">
         <Constraints>
           <div className="grid grid-cols-2 gap-8 lg:gap-[130px] ">
-            <div className="space-y-8 flex flex-col items-start justify-center  col-span-2 md:col-span-1">
+            <div className="space-y-8 flex flex-col items-start justify-center col-span-2 md:col-span-1">
               <div className="space-y-4">
                 <h3>We're no ordinary game studio.</h3>
                 <p>
@@ -77,23 +87,7 @@ export default function Home() {
           </div>
         </Constraints>
       </section>
-      <div className="w-full bg-palette-backgroundLight py-12">
-        <Constraints>
-          <div className="grid grid-cols-12 gap-4">
-            <div className="col-span-7"></div>
-            <div className="col-span-5 space-y-8">
-              <div className="space-y-4">
-                <h3>Want to join us?</h3>
-                <p>
-                  Come and explore your future career options at Arrowhead. Read
-                  more about our culture and the way we work.
-                </p>
-              </div>
-              <Button variant="outline">Join us</Button>
-            </div>
-          </div>
-        </Constraints>
-      </div>
+      <JoinUs />
     </main>
   );
 }

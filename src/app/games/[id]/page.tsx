@@ -2,15 +2,16 @@ import {
   Button,
   Constraints,
   HeroBackground,
+  ParallaxScroll,
   VideoContainer,
 } from "@/components";
-import { gameMeta } from "@/lib/mock";
+import { gameMeta, images } from "@/lib/mock";
 import Image from "next/image";
 
 export default function Game() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <HeroBackground>
+      <HeroBackground src="https://www.arrowheadgamestudios.com/wp-content/uploads/2024/02/GEXjumlXUAAtrlM-1536x864.jpg">
         <div className="flex flex-col justify-center items-center h-full relative">
           <div>
             <h1 className="hero-title text-center">Helldivers 2</h1>
@@ -22,7 +23,9 @@ export default function Game() {
           </div>
         </div>
       </HeroBackground>
+
       <VideoContainer />
+
       <Constraints>
         <div className="grid grid-cols-12 py-16 ">
           {gameMeta.map((meta) => (

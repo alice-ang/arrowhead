@@ -17,6 +17,11 @@ const nextConfig = {
         hostname: "cdn.sortiraparis.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+      },
     ],
   },
 };

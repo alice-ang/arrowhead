@@ -1,15 +1,29 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import { Constraints } from "./Constraints";
 import Image from "next/image";
 import { Socials } from "./Socials";
 import { Button } from "./ui";
+import { footerLinks } from "@/lib/mock";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export const Footer = () => {
+  const ref = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+  });
+
+  const saluteY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+
   return (
-    <div className="relative">
+    <div className="relative ">
       <Constraints>
-        <div className="grid grid-cols-12 items-center">
-          <div className="col-span-12 md:col-span-6 relative">
+        <div
+          className="grid grid-cols-12 items-center relative py-56"
+          ref={ref}
+        >
+          <div className="col-span-12 md:col-span-6 ">
             <button className="text-2xl text-palette-yellow border border-palette-yellow px-6 py-2 -rotate-12 mb-4">
               Community
             </button>
@@ -18,13 +32,6 @@ export const Footer = () => {
               the <br />
               fight
             </h1>
-            {/* <Image
-              src={"/salute.png"}
-              width={390}
-              height={440}
-              alt="Salute helldiver"
-              className="object-contain bg-center object-center -bottom-32 absolute -left-32 rotate-6"
-            /> */}
           </div>
           <div className="col-span-12 md:col-span-6">
             <div className="space-y-8 items-start justify-start flex flex-col ">
@@ -42,13 +49,26 @@ export const Footer = () => {
               <Socials />
             </div>
           </div>
+          <motion.img
+            style={{
+              y: saluteY,
+              backgroundPosition: "bottom",
+              backgroundSize: "cover",
+              scale: 1.3,
+            }}
+            src={"/salute.png"}
+            width={340}
+            height={390}
+            alt="Salute helldiver"
+            className="object-contain bg-center object-center -bottom-16 absolute -left-32 rotate-6 hidden md:block"
+          />
         </div>
       </Constraints>
 
-      <div className=" w-full bg-[url('/footer.png')] h-16 -top-0  bg-no-repeat object-cover bg-center bg-cover " />
+      <footer className="relative">
+        <div className=" w-full bg-[url('/footer.png')] h-16 -top-16  bg-no-repeat object-cover bg-center bg-cover absolute z-100" />
 
-      <footer className="">
-        <div className="bg-palette-backgroundDark p-4">
+        <div className="bg-palette-backgroundDark p-4 ">
           <Constraints>
             <div className="space-y-16">
               <Image
@@ -98,8 +118,8 @@ export const Footer = () => {
                     </div>
                   </form>
                   <div className="flex space-x-8 items-center">
-                    {[0, 1, 2, 3, 4].map(() => (
-                      <p className="underline">Support</p>
+                    {footerLinks.map((link) => (
+                      <p className="underline">{link}</p>
                     ))}
                   </div>
                 </div>

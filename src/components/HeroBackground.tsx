@@ -2,11 +2,17 @@ import React, { ReactNode } from "react";
 import Image from "next/image";
 import { Constraints } from "./Constraints";
 
-export const HeroBackground = ({ children }: { children: ReactNode }) => {
+export const HeroBackground = ({
+  children,
+  src,
+}: {
+  children: ReactNode;
+  src: string;
+}) => {
   return (
     <div className="h-screen w-full relative">
       <Image
-        src="https://www.arrowheadgamestudios.com/wp-content/uploads/2024/02/GEXjumlXUAAtrlM-1536x864.jpg"
+        src={src}
         alt="hero"
         fill
         className="bg-cover object-cover bg-center opacity-25"
