@@ -1,5 +1,11 @@
 "use client";
-import { MotionValue, useTransform, useScroll } from "framer-motion";
+import {
+  MotionValue,
+  useTransform,
+  useScroll,
+  motion,
+  Variants,
+} from "framer-motion";
 import React, { useRef } from "react";
 import { Constraints } from "./Constraints";
 import { cn } from "@/lib/utils";
@@ -8,17 +14,44 @@ import Image from "next/image";
 import { Game } from "@/lib/mock";
 import Link from "next/link";
 
-function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0, 1], [-distance, distance]);
-}
-
 export const GameItem = ({ id, game }: { id: number; game: Game }) => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  const y = useParallax(scrollYProgress, 300);
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "1.33 1"],
+  });
+
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
+
+  const sectionVariants: Variants = {
+    offscreen: {
+      opacity: 0,
+      y: 100,
+    },
+    onscreen: (index: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+
+        delay: 0.1 * index,
+      },
+    }),
+  };
 
   return (
-    <section className="py-24">
+    <motion.div
+      className="py-24"
+      // style={{
+      //   scale: scaleProgress,
+      //   opacity: opacityProgress,
+      // }}
+      initial="offscreen"
+      whileInView="onscreen"
+      variants={sectionVariants}
+    >
       <Constraints>
         <div className="grid grid-cols-2 gap-8 lg:gap-[130px] " ref={ref}>
           <div
@@ -33,7 +66,7 @@ export const GameItem = ({ id, game }: { id: number; game: Game }) => {
               alt="image"
               className={cn(
                 id % 2 ? "rotate-2" : "-rotate-2",
-                "aspect-video object-cover bg-center object-center shadow-lg "
+                "aspect-video object-cover bg-center object-center shadow-lg hover:rotate-0 transition duration-300 ease-in-out"
               )}
             />
           </div>
@@ -48,6 +81,6 @@ export const GameItem = ({ id, game }: { id: number; game: Game }) => {
           </div>
         </div>
       </Constraints>
-    </section>
+    </motion.div>
   );
 };

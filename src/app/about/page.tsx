@@ -1,15 +1,8 @@
 "use client";
-import {
-  Button,
-  Constraints,
-  HeroBackground,
-  JoinUs,
-  VideoContainer,
-} from "@/components";
+import { Constraints } from "@/components";
 import { cn } from "@/lib/utils";
-import { games, images } from "@/lib/mock";
-import Image from "next/image";
-import Link from "next/link";
+import { images } from "@/lib/mock";
+
 import { Variants, motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 

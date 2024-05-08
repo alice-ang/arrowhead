@@ -109,7 +109,7 @@ export const Footer = () => {
                         <div className="absolute  right-0 ">
                           <button
                             type="submit"
-                            className="bg-neutral-300 py-3 px-6 "
+                            className="bg-palette-backgroundLight py-3 px-6"
                           >
                             Sign up
                           </button>
