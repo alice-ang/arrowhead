@@ -29,8 +29,6 @@ export default function About() {
     },
     onscreen: (index: number) => ({
       left: index % 2 ? (index + 1) * 80 : "",
-
-      // top: 180 + 100 * index,
       opacity: 1,
       transition: {
         type: "spring",
