@@ -8,7 +8,7 @@ import { navLinks } from "@/lib/mock";
 
 export const Navigation = () => {
   return (
-    <nav className=" top-0 fixed w-full  p-4 z-10 backdrop-blur-sm ">
+    <nav className=" top-0 fixed w-full  p-4 z-50 backdrop-blur-sm ">
       <Constraints>
         <div className="flex flex-row items-center justify-between ">
           <Link href={"/"} passHref>
@@ -20,7 +20,7 @@ export const Navigation = () => {
               <Link
                 href={`/${link}`}
                 passHref
-                className="text-xl lowercase active:text-palette-yellow"
+                className="text-xl lowercase active:text-palette-yellow after:content-[' '] stripe"
               >
                 {link}
               </Link>

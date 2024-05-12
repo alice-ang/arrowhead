@@ -21,7 +21,7 @@ export default function RootLayout({
 
         <Footer />
 
-        <button className="hidden md:block text-2xl text-palette-yellow border border-palette-yellow px-6 py-2 fixed -left-14 bottom-20 -rotate-90 bg-palette-background">
+        <button className="hidden md:block text-2xl text-palette-yellow border border-palette-yellow px-6 py-2 fixed -left-14 bottom-20 -rotate-90 bg-palette-background ">
           Contact us
         </button>
       </body>

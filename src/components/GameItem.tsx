@@ -1,11 +1,5 @@
 "use client";
-import {
-  MotionValue,
-  useTransform,
-  useScroll,
-  motion,
-  Variants,
-} from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import React, { useRef } from "react";
 import { Constraints } from "./Constraints";
 import { cn } from "@/lib/utils";
@@ -77,10 +71,6 @@ export const GameItem = ({ id, game }: { id: number; game: Game }) => {
   return (
     <motion.div
       className="py-24"
-      // style={{
-      //   scale: scaleProgress,
-      //   opacity: opacityProgress,
-      // }}
       initial="offscreen"
       whileInView="onscreen"
       variants={sectionVariants}
@@ -104,7 +94,7 @@ export const GameItem = ({ id, game }: { id: number; game: Game }) => {
               <Image
                 src={game.image}
                 fill
-                alt="image"
+                alt={game.title}
                 className={cn(
                   id % 2 ? "rotate-2" : "-rotate-2",
                   "aspect-video object-cover bg-center object-center shadow-lg relative z-10 hover:rotate-0 transition duration-300 ease-in-out"

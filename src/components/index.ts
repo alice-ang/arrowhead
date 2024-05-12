@@ -8,3 +8,4 @@ export * from "./HeroBackground";
 export * from "./VideoContainer";
 export * from "./JoinUs";
 export * from "./GameItem";
+export * from "./TextTyping";
