@@ -31,6 +31,26 @@ export const games = [
       "https://www.arrowheadgamestudios.com/wp-content/uploads/2024/02/GEXjumlXUAAtrlM-1536x864.jpg",
   },
 ];
+export const about = [
+  {
+    title: "Arrowhead Game Studios is a unique company.",
+    body: "We’re dedicated to creating intensely thrilling and hilarious game experiences. Through games as a medium, we are on a mission to cure loneliness and build bridges,one friendly-fire co-op session at a time. We are a value driven company that strives to become the best co-op studio in the world.",
+    image:
+      "https://www.arrowheadgamestudios.com/wp-content/uploads/2024/03/arrowhead-office-05.jpg",
+  },
+  {
+    title: "A Swedish developer with humble roots.",
+    body: "Having just released Helldivers 2 it is an exciting time at the studio. With 100+ employees and five shipped titles to date, we’ve come a long way from our humble beginnings as students working on a game. We’re eagerly looking forward to the future and have grand plans for our community and new projects ahead.",
+    image:
+      "https://www.arrowheadgamestudios.com/wp-content/uploads/2024/02/arrowhead-office-06.jpg",
+  },
+  {
+    title: "Offices with a view.",
+    body: "We’re dedicated to creating intensely thrilling and hilarious game experiences. Through games as a medium, we are on a mission to cure loneliness and build bridges,one friendly-fire co-op session at a time. We are a value driven company that strives to become the best co-op studio in the world.",
+    image:
+      "https://www.arrowheadgamestudios.com/wp-content/uploads/2024/03/hero-banner-view-winter-1536x864.jpg",
+  },
+];
 
 export const navLinks = ["about", "games", "news"];
 

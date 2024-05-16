@@ -2,7 +2,6 @@ import {
   Button,
   Constraints,
   HeroBackground,
-  ParallaxScroll,
   VideoContainer,
 } from "@/components";
 import { gameMeta, images } from "@/lib/mock";

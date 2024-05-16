@@ -3,6 +3,7 @@ import {
   Constraints,
   HeroBackground,
   JoinUs,
+  TextTyping,
   VideoContainer,
 } from "@/components";
 import { cn } from "@/lib/utils";
@@ -85,8 +86,37 @@ export default function Home() {
               />
             </div>
           </div>
+          <section className="py-24 space-y-16">
+            <div className="flex flex-row items-end justify-between ">
+              <h3>Latest news</h3>
+              <p className="uppercase underline text-palette-yellow">
+                see all posts
+              </p>
+            </div>
+            <div className="flex flex-row space-x-8  overflow-x-scroll">
+              {[0, 1, 2, 3].map(() => (
+                <div className="space-y-2">
+                  <div className="aspect-video relative overflow-hidden min-w-[590px]">
+                    <Image
+                      src="https://www.arrowheadgamestudios.com/wp-content/uploads/2024/03/arrowhead-office-05.jpg"
+                      fill
+                      alt="image"
+                      className={cn(
+                        "aspect-video object-cover bg-center object-center shadow-lg transition duration-300 ease-in-out hover:scale-105 hover:opacity-75"
+                      )}
+                    />
+                  </div>
+                  <p className="text-palette-lightGrey uppercase">
+                    June 16, 2023
+                  </p>
+                  <h4 className="text-palette-yellow">Summer update</h4>
+                </div>
+              ))}
+            </div>
+          </section>
         </Constraints>
       </section>
+
       <JoinUs />
     </main>
   );

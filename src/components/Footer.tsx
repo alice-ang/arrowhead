@@ -33,7 +33,14 @@ export const Footer = () => {
               fight
             </h1>
           </div>
-          <div className="col-span-12 md:col-span-6">
+          <div className="col-span-12 md:col-span-6 ">
+            <Image
+              src={"/scout.png"}
+              width={980}
+              height={980}
+              alt="Scout strider"
+              className="object-contain bg-center object-center -bottom-32 absolute -right-36 opacity-10"
+            />
             <div className="space-y-8 items-start justify-start flex flex-col ">
               <div className="space-y-4">
                 <h4>Official forums</h4>
@@ -109,7 +116,7 @@ export const Footer = () => {
                         <div className="absolute  right-0 ">
                           <button
                             type="submit"
-                            className="bg-neutral-300 py-3 px-6 "
+                            className="bg-palette-backgroundLight py-3 px-6"
                           >
                             Sign up
                           </button>
@@ -129,20 +136,13 @@ export const Footer = () => {
                   © 2024 Arrowhead Game Studios | All Rights Reserved.
                 </p>
                 <p className="text-palette-darkGrey text-sm">
-                  Site developed by Alice A
+                  Website crafted by Alice A
                 </p>
               </div>
             </div>
           </Constraints>
         </div>
       </footer>
-      {/* <Image
-        src={"/scout.png"}
-        width={940}
-        height={940}
-        alt="Scout strider"
-        className="object-contain bg-center object-center bottom-24 absolute right-24 opacity-10"
-      /> */}
     </div>
   );
 };

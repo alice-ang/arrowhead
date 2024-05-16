@@ -87,3 +87,20 @@ p,
 a {
   font-family: var(--font-poppins);
 }
+
+.stripe:after {
+  background-image: url("/stripe.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  content: "";
+  height: 0.2em;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  transition-duration: 0.5s;
+  transition-property: all;
+  width: 10;
+  z-index: 1;
+}
