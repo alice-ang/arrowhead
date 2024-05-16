@@ -12,9 +12,10 @@ export default function Games() {
       {games.map((game, index) => (
         <GameItem game={game} id={index} />
       ))}
-      <ScrollingText invert>
-        · Playfullness · Believability · Sociality
-      </ScrollingText>
+      <ScrollingText
+        text={["· Playfullness · Believability · Sociality"]}
+        repeat={3}
+      />
     </main>
   );
 }
